@@ -45,20 +45,26 @@ else:
 a = int(input("Enter your age to find your age gp"))
 if a <= 13:
     print("age gp child")
-if a > 13 and a <=19:
+elif a > 13 and a <=19:
     print("age gp Teenage")
-if a > 20 and a <=59:
+elif a > 20 and a <=59:
     print("age gp Adult")
-if a >= 60:
+elif a >= 60:
     print("age gp Senior")
 
 
 a = int(input("Enter your Marks to get your grade"))
 if a >= 90:
     print("grade - A")
-if a >= 75 and a <90:
+elif a >= 75 and a <90:
     print("grade - B")
-if a >=50 and a < 75:
+elif a >=50 and a < 75:
     print("grade - C")
-if a < 50:
+elif a < 50:
     print("grade - F")
+
+
+
+
+
+    
