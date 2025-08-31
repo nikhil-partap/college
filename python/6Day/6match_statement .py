@@ -112,7 +112,7 @@ while i < 6 :
 else:
    print("Bye bye")
   
-  \
+  
 
 
 """
