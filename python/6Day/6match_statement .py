@@ -103,38 +103,162 @@
 
 
 
-i = 0 
-while i < 6 :
-    i +=1
-    if  i  == 3 :
-      continue  # skip all the bellow steps and start the next loop 
-    print(i)
-else:
-   print("Bye bye")
+# i = 0 
+# while i < 6 :
+#     i +=1
+#     if  i  == 3 :
+#       continue  # skip all the bellow steps and start the next loop 
+#     print(i)
+# else:
+#    print("Bye bye")
   
   
 
 
-"""
-write a pg to print no from i to10 using while loop 
-write a pg to print even nos form 1 - 20 
-write a pg to print the multiplication table of a given no 
-write a pg to cal the sum of fist n no 
-write a pg to print nos in reverses from 10 to 1 
-write a pg to find factorial of the nos using while loop 
-write a pg to count the  digits of no 
-write a pg to reverse a no 
-write a pg to find the sum of digits of a no 
-write a pg to check if a no is paledrone no 
-write a pg to check if a no is a prime using while loop
-write a pg to find GCD of two no using while loop
-write a pg to generate faboncci series upto n terms using while
-write a pg to keep asking the user for nos until they enter zero them print the sum of all entered no 
-write a pg to simulate a simple login system keep askig for the pasword until the correct password is entered 
-"""
+# """
+# write a pg to print no from i to10 using while loop   X
+# write a pg to print even nos form 1 - 20      X 
+# write a pg to print the multiplication table of a given no   X
+# write a pg to cal the sum of fist n no      X
+# write a pg to print nos in reverses from 10 to 1     X
+# write a pg to find factorial of the nos using while loop        x
+# write a pg to count the  digits of no      X
+# write a pg to reverse a no                   X
+# write a pg to find the sum of digits of a no   X  
+# write a pg to check if a no is palindrome no   X
+# write a pg to check if a no is a prime using while loop
+# write a pg to find GCD of two no using while loop
+# write a pg to generate faboncci series upto n terms using while
+# write a pg to keep asking the user for nos until they enter zero them print the sum of all entered no 
+# write a pg to simulate a simple login system keep askig for the pasword until the correct password is entered 
+# """
 
 
-        
+# write a pg to print no from i to10 using while loop   X
+# for i in range(10):
+#    print(i)
+
+
+
+
+# write a pg to print even nos form 1 - 20      X 
+# for i in range(20):
+#   i +=1
+#   if i%2 == 0:
+#     print(i)
+   
+
+
+
+# write a pg to print the multiplication table of a given no   X
+# x = int(input("Enter a no to know its multiplication table: "))        
+# for i in range(10):
+#    print(x*i)
+
+
+
+
+# write a pg to cal the sum of fist n no      X
+# y = 0
+# x = int(input("Enter a no to know the sum of 0 to n : "))        
+# for i in range(x):
+#    y = y+i
+  
+
+  
+# write a pg to print nos in reverses from 10 to 1     X
+# i = 10
+# while i > 0 :
+#    print(i)
+#    i -= 1
+
+
+# # write a pg to find factorial of the nos using while loop        x
+# y = 1
+# i = 0
+# x = int(input("Enter a no to know the sum of 0 to n : "))        
+# while i < x:
+#   i += 1 
+#   y *=i
+# print(f"The factorial of {x} is {y}.")
+
+
+
+
+
+# # write a pg to count the  digits of no  
+# x = input("Enter a no to count its digits : ")        
+# y = 0
+# for i in range(len(x)):
+#   y +=1
+# print(y)
+
+
+# # write a pg to reverse a no 
+# try:
+#   num_str = input("Enter a no to reverse it: ")
+#   num_in = int(num_str)
+
+#   if num_in < 0:
+#     rev_str  ="-" +num_str[1:][::-1]
+#   else:
+#     rev_str = num_str[::-1]
+  
+#   rev_num = int(rev_str)
+
+#   print(f"Original number: {num_in} Reversed number: {rev_num}")
+
+
+
+# except ValueError:
+#   print("Invalid input. Please enter a valid integer.")
+
+
+
+
+# # write a pg to find the sum of digits of a no             X
+#   num_str = input("Enter a no to find the sum of its digits")
+  
+# try :
+#   sum_ = 0
+#   for char in num_str:
+#     try:
+#       sum_ += int(char) 
+#     except ValueError:
+#       continue
+
+# except ValueError:
+#   print("Invalid input Enter a valid int ")
+
+
+
+
+# write a pg to check if a no is palindrome no 
+num_str = input("Enter a no to check if a no is palindrome no")
+
+try:
+  num = int(num_str)
+  if num < 0:
+    ispalindrome = (num_str[1:][::-1] == num_str[1:])
+    rev = int("-"+num_str[1:][::-1])
+  else :
+    ispalindrome = (num_str[::-1] == num_str)
+    rev = int(num_str[::-1])
+
+  if ispalindrome:
+    print(f"palindrome of {num} is {rev}")
+  else:
+    print(f"The number {num} is not a palindrome.")
+
+except ValueError:
+  print("Invalid input. Please enter a valid integer.")
+
+
+
+
+
+
+
 
 
 
