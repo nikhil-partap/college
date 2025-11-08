@@ -62,24 +62,23 @@
 
 # Find the length of a list without using len()
 
-lists = ["to", "hi", "there"]
+# lists = ["to", "hi", "there"]
 
-def list_length(lst):
-    count = 0
-    for i in lst:
-        count +=1
-    return count
+# def list_length(lst):
+#     count = 0
+#     for i in lst:
+#         count +=1
+#     return count
 
-# print(list_length(lists))
+# # print(list_length(lists))
 
 
 
-lists = [1 ,5,4,3,2,7,8,9,0,]
+# lists = [1 ,5,4,3,2,7,8,9,0,]
 
-lists.sort()
-print(lists[0] )
-print(lists[len(lists)-1])
-
+# lists.sort()
+# print(lists[0] )
+# print(lists[len(lists)-1])
 
 
 

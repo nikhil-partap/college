@@ -26,3 +26,12 @@
 # Write a program to calculate the final price after discount.
 
 
+
+# Problem (Bloom: Remember→Apply):
+# Convert space-separated Celsius values to Fahrenheit using map. Round each to 1 decimal and print as a Python list in the same order.
+# Input Format
+# Line 1: space-separated floats
+# Output Format
+# Python list of floats
+
+
