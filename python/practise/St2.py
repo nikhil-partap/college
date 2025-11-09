@@ -24,4 +24,15 @@
 # Problem (Bloom: Apply→Analyze):
 # From a list of integers, sum only the odd numbers.
 
-ins = input("input a list of no: ")
+# ins = list(map(int ,input("input a list of no: ").split()))
+# sums =  0
+# for no in ins:
+#     if no % 2 != 0:
+#         sums += no
+# print(sums)
+
+
+# Problem (Bloom: Remember→Apply):
+# Count vowels (a,e,i,o,u) in a string, case-insensitive.
+
+ins = input().re
