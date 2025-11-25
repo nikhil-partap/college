@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square Hover Animation</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+
+      #myDiv {
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        position: relative;
+        transition: background-color 0.3s ease;
+      }
+
+      #myDiv:hover {
+        background-color: black;
+        animation: moveSquare 2s linear infinite;
+      }
+
+      @keyframes moveSquare {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(100px, 0);
+        }
+        50% {
+          transform: translate(100px, 100px);
+        } /* move down */
+        75% {
+          transform: translate(0, 100px);
+        } /* move left */
+        100% {
+          transform: translate(0, 0);
+        } /* move up (back to start) */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myDiv"></div>
+  </body>
+</html>
