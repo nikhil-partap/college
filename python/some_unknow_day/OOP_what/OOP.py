@@ -45,9 +45,9 @@ my_car.drive()  # Output: Honda is driving.
 class Dog:
     def __init__(self, name):
         self.name = name
-    
+
     def bark(self):
         print(self.name, "says woof!")
 
-my_dog = Dog("Rocky")  # Creating an object
+my_dog = Dog("divyam")  # Creating an object
 my_dog.bark()  # Output: Rocky says woof!
