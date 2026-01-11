@@ -1,37 +1,48 @@
-#It’s...not really an adventure game...#Ver 1.0
-#Your village is being attacked by 'a germanic tribe' and you need to run to the stores and get the right things to save your village, and probably some good looking girl or boy you want to marry. All prices in gold pieces excl. VAT... chop chop!! ze germanz are coming!
-#The code should allow you to get 1 thing from each store and each item you get should be removed from the store inventory, then do same for next store...
-# one way to buy by typing the key 'newt' in an input box...or something
-# at end you should print the 'items' you have taken..in this version you don't have to pay for stuff or add it up
-#ver 1.2 add ability to exit a store without buying and go to next by typing 'exit', and to exit if a nonexistant item is bought(typed)
-#Add purse with 1000 gold pieces and payment for the items during or at end of code and show a message about total cost and how much gold you have left
-#ver 1.4 random bug fix, ' browser compatability', refactoring code... basically being lazy ..stop scrolling TikTok/Facebook! ;-)
-#Ver 1.5 print inventory before and after purchases as one department_store of stuff(combine inventories from all stores into one...pretend Big Biz bought all the local stores, and want constant reporting for inventory management...)
-# as in all games there is a special way to do this that actually makes money and solves the problem...can you find 'them'? Do you know why? May require knowledge of actual python 'lore'
+#  🍕 Pizza Builder — Challenge Steps
+#
+# 1. Define a Pizza class that stores:
+#    - size, crust type, and a list of toppings
+# 2. Add a method to add a new topping
+# 3. Add a method to remove a topping if it exists
+# 4. Add a method to print pizza details:
+#    - size, crust, and all toppings (or “No toppings yet!”)
+# 5. Create a pizza object, customize it, and print the summary
 
-#create stores
-from tkinter import NO
+Toppings = ("electlicity" , "microcontrollers", "cpu", "gpu", "transistors")
+class pizza:
+    def __init__ (self, size, crust, topping = None):
+        self.size = size    
+        self.crust = crust
+        self.topping = topping
+    
+    def addTopping(self):
+        top = input(f'select the topping from {Toppings} : ')
+        if top not in Toppings:
+            print('please select the toppings from ', Toppings)
+            # addTopping()
+        else :
+            self.topping = top
+            
+    def changeToppings(self):
+        if self.topping :
+            newTop = input(f'please select the new topping from {Toppings}')
+            if newTop not in Toppings:
+                print('please select the toppings from ', Toppings)
+                # addTopping()
+            else :
+                self.topping = newTop
+        else :
+            print('there is no topping on the pizza you have to select one to change it')
+            
+    def printPizza(self):
+        print(f'size of the pizza {self.size} \n crust of the pizza {self.crust} ')
+        if self.topping :
+            print(self.topping)
+            print('all/more Toppings to add ', Toppings)
+        else :
+            print('No toppings yet!')
+    
 
-
-freelancers = {'name':'freelancing Shop','brian': 70, 'black knight':20, 'biccus diccus':100, 'grim reaper':500, 'minstrel':-15}
-antiques = {'name':'Antique Shop','french castle':400, 'wooden grail':3, 'scythe':150, 'catapult':75, 'german joke':5}
-pet_shop = {'name':'Pet Shop','blue parrot':10, 'white rabbit':5, 'newt': 2}
-
-#create an dempty shopping cart
-cart = {}
-purse = 1000
-purchaseAmount = 0
-buy_items = None
-#loop through stores/dicts
-for shop in (freelancers,antiques,pet_shop) :
-    #inputbox  to show what you can buy...capture textstring of what was bought...make lowercase
-    buy_item = input(f'Welcome to {shop["name"]}! what do you want to buy: {shop}').lower()
-    if buy_item == "exit" or buy_item not in shop:
-        continue
-    else:
-        #update the cart
-        purchaseAmount += shop[buy_item]
-        cart.update({buy_item:shop.pop(buy_item)}) # use pop...
-        buy_items = ", ".join(list(cart.keys()))
-purse -= purchaseAmount
-print(f'You Purchased {buy_items}. Today you have spend {purchaseAmount} and now you have {purse} gold left. Have a nice day of mayhem!')
+# Create and test a pizza
+my_pizza = pizza("Large", "Thin", None)
+my_pizza.printPizza()
