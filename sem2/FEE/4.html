@@ -1,0 +1,65 @@
+<!--
+Q1- create a webpage that takes two nos from the user and has btn for add and, subtract, multiply and divide 
+and display the result using js
+Q2- create a webpage with btn that changes the background color of the page when clicked     
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: rgba(0, 0, 0, 0.712)">
+    <script>
+      let a, b, c;
+      function getvalue() {
+        a = Number(document.getElementById("no1").value);
+        b = Number(document.getElementById("no2").value);
+      }
+      function add() {
+        getvalue();
+        c = a + b;
+        pushToFrontEnd();
+      }
+
+      function subtract() {
+        getvalue();
+        c = a - b;
+        pushToFrontEnd();
+      }
+
+      function divide() {
+        getvalue();
+        c = a / b;
+        pushToFrontEnd();
+      }
+
+      function multiply() {
+        getvalue();
+        c = a * b;
+        pushToFrontEnd();
+      }
+
+      function pushToFrontEnd() {
+        document.getElementById("out").innerHTML = c;
+      }
+    </script>
+    <input type="number" name="" id="no1" />
+    <input type="number" name="" id="no2" />
+
+    <br />
+    <button onclick="add()">add</button>
+    <br />
+    <button onclick="multiply()">multiply</button><br />
+    <button onclick="divide()">divide</button><br />
+    <button onclick="subtract()">subtract</button>
+    <h1>
+      output =
+      <p id="out"></p>
+    </h1>
+  </body>
+</html>
+
+wwwwwww

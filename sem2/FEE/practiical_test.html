@@ -1,0 +1,55 @@
+<!-- print the greatest of three no take the nos from the user  -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Greatest Number</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        width: 60px;
+        padding: 5px;
+        margin: 5px;
+      }
+      button {
+        padding: 8px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      #out {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Enter 3 numbers to find the greatest</p>
+
+    <div>
+      <input type="number" id="no1" placeholder="No 1" />
+      <input type="number" id="no2" placeholder="No 2" />
+      <input type="number" id="no3" placeholder="No 3" />
+    </div>
+
+    <button type="button" onclick="greatest()">Find the greatest</button>
+
+    <h2>The greatest is: <span id="out"></span></h2>
+
+    <script>
+      function greatest() {
+        let a = Number(document.getElementById("no1").value);
+        let b = Number(document.getElementById("no2").value);
+        let c = Number(document.getElementById("no3").value);
+
+        if (a >= b && a >= c) document.getElementById("out").innerHTML = a;
+        else if (b >= a && b >= c) document.getElementById("out").innerHTML = b;
+        else document.getElementById("out").innerHTML = c;
+      }
+    </script>
+  </body>
+</html>

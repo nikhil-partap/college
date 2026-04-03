@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Scope & Mutability Lab</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background: #f4f4f4;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .error {
+        color: #d9534f;
+        font-weight: bold;
+      }
+      .success {
+        color: #5cb85c;
+        font-weight: bold;
+      }
+      pre {
+        background: #222;
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Scope & Mutability Experiment</h1>
+      <p>Check the results below to see how JavaScript handles variables.</p>
+      <div id="display"></div>
+    </div>
+
+    <script>
+      const display = document.getElementById("display");
+      function logToPage(msg, isError = false) {
+        const p = document.createElement("p");
+        p.className = isError ? "error" : "success";
+        p.textContent = msg;
+        display.appendChild(p);
+      }
+
+      // Test for block scope   mean - a variable can not be called from outside of its scope  (var keyword is a exception)
+
+      function scope_of_var() {
+        var no = 2; // the var leaks out of its scope so you can call it from outside of the function
+        let no2 = 3; // that why the let and const were introduced
+      }
+      scope_of_var();
+
+      try {
+        const var_out = console.log(no); // run without any error because var is leaking out of its block
+        logToPage("Var output: " + no);
+      } catch (e) {
+        logToPage("Var Error: " + e.message, true);
+      }
+
+      try {
+        const let_out = console.log(no2); // gives reference error
+      } catch (e) {
+        logToPage("Let Error: " + e.message, true);
+      }
+
+      // test for the mutability   mean - it is the why you can reassign the const variable value
+      let str = "this can be changed ";
+
+      try {
+        console.log(str2);
+      } catch (e) {
+        logToPage("Hoisting Error (str2): " + e.message, true);
+      }
+
+      str = "the new value for the str";
+      logToPage("Updated let str: " + str);
+
+      const str2 = "have fun while changing this";
+      logToPage("Const str2: " + str2);
+
+      try {
+        str2 = "this is why you get the error";
+      } catch (e) {
+        logToPage("Const Reassignment Error: " + e.message, true);
+      }
+
+      // The Object Loophole
+      const myobj = {name: "alex"};
+
+      myobj.name = "sam"; // this will work and the name value will change
+
+      logToPage("Object mutation (myobj.name): " + myobj.name);
+      console.log(myobj); // this will give a error
+
+      // global vs local
+
+      let status = "this i will not change inside the function ";
+
+      function scopeExperiment() {
+        let status = "this only exist inside this function.";
+
+        console.log(status); // this print  (this only exist inside this function)
+        logToPage("Inside Function: " + status);
+      }
+
+      scopeExperiment();
+
+      console.log(status); // this is still (this i will not change inside the function)
+      logToPage("Outside Function: " + status);
+    </script>
+  </body>
+</html>

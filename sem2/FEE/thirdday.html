@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. Test for block scope   mean - a variable can not be called from outside of its scope  (var keyword is a exception)
+      function scope_of_var() {
+        var no = 2; // the var leaks out of its scope so you can call it from outside of the function
+        let no2 = 3; // that why the let and const were introduced
+      }
+      scope_of_var();
+
+      const var_out = console.log(no); // run without any error because var is leaking out of its block
+      const let_out = console.log(no2); // gives reference error
+
+      // 2. test for the mutability  mean - it is the why you can reassign the const variable value
+      let str = "this can be changed ";
+      console.log(str2);
+      str = "the new value for the str";
+
+      console.log(str2);
+
+      const str2 = "have fun while changing this";
+      console.log(str2);
+      str2 = "this is why you get the error";
+
+      console.log(str2);
+
+      // 3. The Object Loophole
+      const myobj = {name: "alex"};
+
+      myobj.name = "sam"; // this will work and the name value will change
+
+      console.log(myobj); // this will give a error
+
+      // 4. global vs local
+      let status = "this i will not change inside the function ";
+
+      function scopeExperiment() {
+        let status = "this only exist inside this function.";
+
+        console.log(status); // this print  (this only exist inside this function)
+      }
+
+      scopeExperiment();
+
+      console.log(status); // this is still (this i will not change inside the function)
+    </script>
+  </body>
+</html>
