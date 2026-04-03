@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // you can also use Array.forEach()
+      const fruits = ["apple", "orange", "cherry"];
+      let text = "<ul>";
+      fruits.forEach(myfunction);
+      text += "</ul>";
+      function myfunction(value) {
+        text += "<li>" + value + "</li>";
+      }
+    </script>
+  </head>
+  <body>
+    <h2>JavaScript Array forEach()</h2>
+    <p>The forEach() method calls a function for each array element.</p>
+    <p id="demo"></p>
+    <script>
+      document.getElementById("demo").innerHTML = text;
+    </script>
+  </body>
+</html>

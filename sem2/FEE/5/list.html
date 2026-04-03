@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- the easiest way to add a new element to an array is using the push method
+      -->
+    <!-- array.push("element to add") -->
+    <p id="demo"></p>
+    <script>
+      var fruits, text;
+      fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo").innerHTML = fruits;
+    </script>
+    <!-- a new element can be added to an array by using the len property 
+     fruits[fruits.lenth] = "new element" -->
+
+    <!-- adding element with the higher index can create undefined holes in the array
+        -->
+    <!-- 
+    pop - removes the last element from an array
+    push - adds a new element to an array (at the end)
+    shift - removes the first element and "shifts" all other elements to lower index | syntax - array.shift();
+
+    unshift - adds a new element to an array (at the beginning)
+
+    length - returns the number of elements  (length is a property not a method)
+    
+    delete - deletes an element from an array (using the delete keyword) leaves undefined | syntax - 
+
+    splice - adds new items to an array | syntax - array.splice(index, howmany, item1, ....., itemX)
+
+    concat - joins two or more arrays
+    find -  finds an element in an array
+    at() - allows negative indexing | how - array.at(-1) will return the last element | array.at(-2) will return the second to last element eg - array.at() 
+    fruit.at(1) = fruit[1];
+    join - joins all elements of an array into a string eg - 
+    fruits.join(" * ")
+    will output Banana * Orange * Apple * Mango
+
+    toString - converts array to comma separated string
+
+    isArray -> isArray(fruits) - checks if an object is an array | syntax - Array.isArray(arrayname); | 
+    eg - fruits.isArray(fruits); output -   
+
+    -->
+
+    <!-- 
+    
+    concat method does not change the existing arrays, it instead returns a new array 
+    <p id="demo"></p>
+    fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+    copyWithin - copies array elements within the array, to the position at which the copying begins | syntax -  fruits.copyWithin(2,0)
+    the copyWithin() method copies array elements within the array, to the position at which the copying begins. 
+    example - fruits.copyWithin(2, 0) will copy the elements at index 0 and 1 to index 2 and 3
+    the copyWithin() method takes 3 parameters: target, start, end
+    fruits.copyWithin(2, 0) output
+    ["Banana", "Orange", "Banana", "Orange"]
+    fruits.copyWithin(2, 0, 2) will copy the elements at index 0 and 1 to index 2 and 3
+    output - ["Banana", "Orange", "Banana", "Orange"]
+    fruits.copyWithin(2, 0, 1) will copy the element at index 0 to index 2
+    output - ["Banana", "Orange", "Banana", "Mango"] 
+    fruits.copyWithin(3, 0, 2) will copy the element at index 0 to index 2 
+    output - ["Banana", "Orange", "Apple", "Banana"] 
+    the copyWithin() method copies array elements within the array, to the position at which the copying begins.
+    overrides the existing values it doesnt change the len of array
+
+    -->
+
+    <!-- 
+    
+    flat() it creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+    -->
+
+    <script>
+      var arr1 = [1, 2, 3];
+      var arr2 = [4, 5, 6];
+      var arr3 = arr1.concat(arr2);
+      document.getElementById("demo").innerHTML = arr3;
+    </script>
+  </body>
+</html>
