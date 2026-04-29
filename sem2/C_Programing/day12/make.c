@@ -30,6 +30,6 @@ int main(){
     }
     return 0;
 }
-
+        
 // sample input and output 
 // input -amit 60000 6 output - amit 64800;
