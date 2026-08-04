@@ -17,11 +17,7 @@ public class Student {
     }
 
     boolean isPassed(){
-        if(this.marks < 40){
-            return false;
-        } else {
-            return true;
-        }
+        return this.marks >= 40
     }
     
 }

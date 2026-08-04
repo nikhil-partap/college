@@ -44,6 +44,7 @@ public class java3 {
             balance = purchase(item, balance, UserChoice.name(), UserChoice.price());
 
         } 
+        input.close();
 
     }
 
@@ -55,8 +56,10 @@ public class java3 {
                         System.out.println("Insufficient balance");
         
                     }
+                    
                 
         return balance;
+        
     }
     
     

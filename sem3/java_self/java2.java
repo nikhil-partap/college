@@ -62,6 +62,7 @@ public class java2 {
 
             }
         } 
+        input.close();
 
     }
 }

@@ -16,7 +16,7 @@ public class Main {
         System.out.println("\nPassed : " + s2.isPassed());
 
         System.out.println("\n-----------------------");
-
+        
         System.out.println("Student 3");
         s3.display();
         System.out.println("\nPassed : " + s3.isPassed());

@@ -14,7 +14,7 @@ public class student {
     rollNo = SrollNo;
   }
     public static void main(String[] args) {
-      student s1 = new student("Alex", 18, 101);
+      // student s1 = new student("Alex", 18, 101);
       
     }
 }
