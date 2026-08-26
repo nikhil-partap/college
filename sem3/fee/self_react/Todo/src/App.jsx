@@ -84,6 +84,7 @@ function App(props) {
           <div className="btn-group">
             <button type="button" className="btn">
               Edit <span className="visually-hidden">Repeat</span>
+              
             </button>
             <button type="button" className="btn btn__danger">
               Delete <span className="visually-hidden">Repeat</span>
