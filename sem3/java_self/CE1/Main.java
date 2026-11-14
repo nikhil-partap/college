@@ -4,16 +4,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] nos = new int[n];
-        for (int i = 0; i < n; i++) {
-            nos[i] = sc.nextInt();
-        }
-        int split = (n + 1) / 2;
-        for (int i = 00; i < split; i++) {
-            System.out.print(nos[i] + " ");
-        }
-        for (int i = n - 1; i >= split; i--) {
-            System.out.print(nos[i] + " ");
+        int grid = 2 * n - 1;
+        for (int i = 0; i < grid; i++) {
+            for (int j = 0; j < grid; j++) {
+                int top = i + 1;
+                int left = j + 1;
+                int bottom = grid - i;
+                int right = grid - j;
+
+                int dis = Math.min(Math.min(top, bottom), Math.min(right, left));
+                System.out.print(dis);
+            }
+            System.out.println();
         }
     }
 }
