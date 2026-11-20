@@ -4,13 +4,12 @@
 // 2nd thread pool -> print info 
 // 3rd thread pool -> write student object to file
 
-import java.util.concurrent.BlockingQueue;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import  java.io.FileWriter;
 
-public class Student { // 10 objects
+class Student { // 10 objects
 
     int mathsMarks;
     int scienceMarks;
@@ -20,7 +19,7 @@ public class Student { // 10 objects
 
     String name;
     int rollNo;
-    
+
     public Student(int mathsMarks, int scienceMarks, int englishMarks, String name, int rollNo) {
         this.mathsMarks = mathsMarks;
         this.scienceMarks = scienceMarks;
@@ -30,7 +29,7 @@ public class Student { // 10 objects
     }
 
     // public int getTotalMarks() {
-    //     return mathsMarks + scienceMarks + englishMarks;
+    // return mathsMarks + scienceMarks + englishMarks;
     // }
 
     public String getInfo() {
@@ -52,11 +51,16 @@ public class Test {
         ExecutorService PrintInfo = Executors.newFixedThreadPool(3);
         ExecutorService WriteToFile = Executors.newFixedThreadPool(3);
 
-        calculateTotal.execute(() -> {
-            for (int i = 0; i < 10; i++) {
-                student[i].totalMarks = student[i].mathsMarks + student[i].scienceMarks + student[i].englishMarks;
-            }
-        });
+        for (int i = 0; i < 10; i++) {
+            final int index = i;
+
+            calculateTotal.execute(() -> {
+                Student s = student[index];
+                s.totalMarks = s.mathsMarks + s.scienceMarks + s.englishMarks;
+            });
+
+        }
+        ;
 
         PrintInfo.execute(() -> {
             for (int i = 0; i < student.length; i++) {
@@ -66,21 +70,26 @@ public class Test {
 
         WriteToFile.execute(() -> {
             for (int i = 0; i < student.length; i++) {
-                FileWriter writer = new FileWriter("student" + (i + 1) + ".txt")
-                writer.write(student[i].getInfo());
-                writer.close();
+                try {
+                    FileWriter writer = new FileWriter("student" + (i + 1) + ".txt");
+                    writer.write(student[i].getInfo());
+                    writer.close();
+
+                } catch (IOException e) {
+
+                    e.printStackTrace();
+                }
             }
         });
 
-        
     }
 }
 
-
 // try {
-//     java.io.FileWriter writer = new java.io.FileWriter("student" + (i + 1) + ".txt");
-//     writer.write(student[i].getInfo());
-//     writer.close();
+// java.io.FileWriter writer = new java.io.FileWriter("student" + (i + 1) +
+// ".txt");
+// writer.write(student[i].getInfo());
+// writer.close();
 // } catch (Exception e) {
-//     e.printStackTrace();
+// e.printStackTrace();
 // }
